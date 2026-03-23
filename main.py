@@ -18,14 +18,12 @@ def summarize_text(text: str, max_sentences: int = 3) -> dict:
     return {
         "original_word_count": len(text.split()),
         "max_sentences_requested": max_sentences,
-        "instruction": f"Summarize the following text in at most {max_sentences} sentences. Be concise and preserve key points.\n\nTEXT:\n{text}"
+        "instruction": f"Summarize in {max_sentences} sentences:\n\n{text}"
     }
 
 SYSTEM_PROMPT = """
 You are a helpful text summarization assistant.
-When given text to summarize:
-1. Call the summarize_text tool.
-2. Return ONLY this JSON format:
+When given text to summarize, call the summarize_text tool, then return ONLY this JSON:
 {
   "summary": "<summary here>",
   "original_word_count": <number>,
