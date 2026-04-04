@@ -1,3 +1,5 @@
 fastapi
 uvicorn[standard]
-groq
+google-adk
+google-generativeai
+pydantic
